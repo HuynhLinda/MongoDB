@@ -1,0 +1,43 @@
+1. A primary key is a unique _id where the documents are stored. An example of a primary key in the restaurant database is the _id for the ObjectID.
+2. JSON stands for JavaScript Object Notation. An example of a JSON object is the files we use to import the databases into the MongoDB program.
+3. The purpose of a "projection" in a find query for MongoDB is used to return only the fields you request. 
+
+4. This query returns documents that give you the firstname or the lastname specified.
+5. This query returns documents that is has the make of "Honda" and includes the year when the data is returned.
+6. This query returns the documents that has the make of "Honda" and includes the year but doesn't include the _id.
+7. This query updates all the cuisines under "Japanese" to have a new street address.
+
+8.db.restaurants.count( 
+	{cuisine:{$eq:"Bakery"}
+	} 
+)
+
+9. db.restaurants.updateMany(
+	{cuisine:{$eq:"Bakery"},
+	{$set: {
+		"address": {
+			"building": "10000",
+			"coord": [
+					-50,
+					2
+				],
+				"street": "Other street",
+				"zipcode": "99999"
+}}}}
+)
+
+10. db.restaurants.insertOne(
+	{
+		name:"Cal State LA Cuisine",
+		cuisine:"Italian",
+		address: {
+			"building": "1000",
+			"street":"5151 State University Dr",
+			"zipcode":"90032"
+			},
+			"restaurant_id":12345678
+			})
+			
+11. db.restaurants.remove(
+	{name:"Cal State LA Cuisine"}
+)

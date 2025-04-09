@@ -1,0 +1,55 @@
+1. db.users.insert(
+	{
+	 name: "Charlie",
+	 age:25,
+	 position: "lecturer"
+	 }
+)
+
+2. db.users.insert(
+	{
+	name: "Alice",
+	age:20,
+	position: "student",
+	grade: 84
+	}
+)
+
+3. db.users.insert(
+	{
+	name:"Bob",
+	age:21,
+	position:"student",
+	grade: 89
+	}
+)
+
+4. db.users.update(
+	{ name:"Alice"},
+	{ 
+	 $set: {"grade": 95}}
+)
+
+5. db.users.remove(
+	{name:"Bob" }
+)
+
+6. db.users.insert(
+	{
+	name:"John",
+	age:30,
+	position:"student",
+	grade:94
+	}
+)
+
+7. db.users.updateMany(
+	{position:"student"},
+	{$set: {
+	"homeaddress": {
+		street: "1234 Random st.",
+		city: "Los Angeles",
+		state: "CA"
+		}
+	}}
+)

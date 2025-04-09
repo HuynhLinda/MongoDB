@@ -1,0 +1,29 @@
+1. db.restaurants.find({"borough":{$eq:"Queens"}}).pretty()
+
+2. db.restaurants.find({"restaurant_id":{$eq:"40377124"}}).pretty()
+
+3. db.restaurants.find({"cuisine":{$eq:"Italian"}}).pretty()
+
+4. db.restaurants.find({"address.building":"703"},
+			{"name":1,"address":1,"_id":0
+			}).pretty()
+
+5.db.restaurants.find({"address.street":"Spring Street", 
+			"address.building":"300"},
+			{"name":1,"address":1,"_id":0
+			}).pretty()
+
+6.db.restaurants.find(
+    { $or:[{ "cuisine": "American" }, { "cuisine": "French" }]},
+    {"name": 1, "cuisine": 1, "_id": 0,
+	}).pretty()
+
+7.db.restaurants.find(
+	{ "grades.score": { $gt: 100 }},
+	{"name": 1, "grades.score": 1,"_id":0,
+	}).pretty()
+
+8. db.restaurants.find(
+	{"address.zipcode":"10065"},
+	{"borough":0,"cuisine":0,"grades":0
+	}).pretty()
